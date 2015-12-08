@@ -77,8 +77,6 @@ Notice the very first thing in our file: a column called `GISJOIN`, just like ou
 
 To join the data with the shapefile, we load the CSV into QGIS by selecting "Layer > Add Layer > Add Delimited Text Layer" from the menu. Navigate to the file and make sure to select "no geometry" from the file browser (since the file includes no spatial information like latitude and longitude).
 
-![Adding a CSV file to QGIS.](images/qgis-delimited.png)
-
 Both layers are now in QGIS. Time to join them. Right click on the *shapefile* layer, select "Properties," and click the "Joins" tab. Recall that both files have a `GISJOIN` column. We'll use that column to let QGIS know what data should be linked up with what Census tracts. It's more than likely most of your historical data won't be as nicely organized as the NHGIS data. You might, for example, have to join data using different columns or create your own unique index to allow joins to be successful. What's important to remember is that each row of the CSV needs to have a corresponding unique ID that matches the shapefile ID.
 
 Once the join is complete, you can open the shapefile's attribute table again and see new columns of data pulled from our CSV file. Now, let's create a more useful graduated symbol map. Instead of selecting `SHAPE_AREA`, let's select `B07002` (the column of African American populations), click "Apply," and click "OK" to see our handywork.
@@ -91,7 +89,7 @@ If you want to know more about what QGIS can do, check out their guide "[A Gentl
 
 Sometimes we'll want to also include a base map to allow our readers a better sense of topography and geography. Luckily, QGIS makes this pretty simple with it's plugin system. We're going to add the OpenLayers plugin. Navigate to "Plugins > Manage and Install Plugins..." In the window that appears, make sure the "All" tab is selected and search for "OpenLayers." Select the "OpenLayers Plugin" and click "Install." When done, a new menubar item will appear called "Web."
 
-So, let's add a base map to our county tracts.
+So, let's add a base map to our county tracts. Under "Web," select "Open Layers Plugin > Open Street Map > OCM Terrain" to add a physical terrain map to our visualization. You may need to rearrange the layers for the shapefiles to appear. You might also want to adjust the transparency of the shapefiles so we can see the terrain underneath.
 
 ## Examples of Spatial History
 
