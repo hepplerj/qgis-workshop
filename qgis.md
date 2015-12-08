@@ -81,8 +81,6 @@ To join the data with the shapefile, we load the CSV into QGIS by selecting "Lay
 
 Both layers are now in QGIS. Time to join them. Right click on the *shapefile* layer, select "Properties," and click the "Joins" tab. Recall that both files have a `GISJOIN` column. We'll use that column to let QGIS know what data should be linked up with what Census tracts. It's more than likely most of your historical data won't be as nicely organized as the NHGIS data. You might, for example, have to join data using different columns or create your own unique index to allow joins to be successful. What's important to remember is that each row of the CSV needs to have a corresponding unique ID that matches the shapefile ID.
 
-![Joining a CSV file to a shapefile.](images/qgis-join.png)
-
 Once the join is complete, you can open the shapefile's attribute table again and see new columns of data pulled from our CSV file. Now, let's create a more useful graduated symbol map. Instead of selecting `SHAPE_AREA`, let's select `B07002` (the column of African American populations), click "Apply," and click "OK" to see our handywork.
 
 Congratulations! You just made your first geographic visualization in QGIS.
